@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Appointments list {% endblock %}
+
+{% block content %}
+<table class="table">
+    <h1 style="text-align: center;color: cornflowerblue">Applied appointments</h1>
+    <thead>
+    <tr>
+
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Date of Appointment</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+       {% for y in appointments %}
+          <tr>
+
+              <td>{{ y.name }}</td>
+              <td>{{ y.email }}</td>
+              <td>{{ y.number }}</td>
+              <td>{{ y.visit_date }}</td>
+              <td>{{ y.description }}</td>
+
+              <td>
+                  <a href="{% url 'editappointment' y.id %}" class="btn btn-primary" type="button" >EDIT APPOINTMENT</a>
+              </td>
+              <td>
+                  <a href="{% url 'deleteappointment' y.id %}" class="btn btn-danger" type="button" onclick="return confirm('Are you sure you want to delete the Appointment?')">DELETE APPOINTMENT</a>
+              </td>
+          </tr>
+       {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'querylist' %}">
+    <button>Querys list</button>
+</a>
+<a href="{% url 'newsletterlist' %}">
+    <button>Newsletter list</button>
+</a>
+<a href="{% url 'index' %}">
+    <button>Add Appointment</button>
+</a>
+
+{% endblock %}

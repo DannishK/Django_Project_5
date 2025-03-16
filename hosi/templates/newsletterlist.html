@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Appointments Newsletter {% endblock %}
+
+{% block content %}
+<table class="table">
+    <h1 style="text-align: center;color: cornflowerblue">Applied For Newsletter</h1>
+    <thead>
+    <tr>
+
+
+        <th>Email</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+       {% for y in newsletters %}
+          <tr>
+
+
+              <td>{{ y.email }}</td>
+
+
+              <td>
+                  <a href="{% url 'editnewsletter' y.id %}" class="btn btn-primary" type="button" >EDIT EMAIL</a>
+              </td>
+              <td>
+                  <a href="{% url 'deletenewsletter' y.id %}" class="btn btn-danger" type="button" onclick="return confirm('Are you sure you want to delete the email?')">DELETE EMAIL</a>
+              </td>
+          </tr>
+       {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'appointmentslist' %}">
+    <button>Appointment list</button>
+</a>
+<a href="{% url 'querylist' %}">
+    <button>Queries list</button>
+</a>
+<a href="{% url 'index' %}">
+    <button>Add Newsletter (scroll to the bottom)</button>
+</a>
+
+{% endblock %}

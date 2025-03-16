@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Edit Appointment{% endblock %}
+
+
+{% block content %}
+<h2>Edit Application Form</h2>
+<form action="" method="POST" >
+  {% csrf_token %}
+  {{ form }}
+  <button class="btn btn-primary">Edit Application </button>
+</form>
+
+{% endblock %}

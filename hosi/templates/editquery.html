@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Edit FaQs{% endblock %}
+
+
+{% block content %}
+<h2>Edit FaQ Form</h2>
+<form action="" method="POST" >
+  {% csrf_token %}
+  {{ form }}
+  <button class="btn btn-primary">Edit Query </button>
+</form>
+
+{% endblock %}

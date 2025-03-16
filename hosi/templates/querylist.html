@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Queries list {% endblock %}
+
+{% block content %}
+<table class="table">
+    <h1 style="text-align: center;color: cornflowerblue">Queries Posted</h1>
+    <thead>
+    <tr>
+
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+       {% for y in querys %}
+          <tr>
+
+              <td>{{ y.name }}</td>
+              <td>{{ y.email }}</td>
+              <td>{{ y.subject }}</td>
+              <td>{{ y.message }}</td>
+
+
+              <td>
+                  <a href="{% url 'editquery' y.id %}" class="btn btn-primary" type="button" >EDIT QUERY</a>
+              </td>
+              <td>
+                  <a href="{% url 'deletequery' y.id %}" class="btn btn-danger" type="button" onclick="return confirm('Are you sure you want to delete the FaQ?')">DELETE QUERY</a>
+              </td>
+          </tr>
+       {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'appointmentslist' %}">
+    <button>Appointment list</button>
+</a>
+<a href="{% url 'newsletterlist' %}">
+    <button>Newsletter list</button>
+</a>
+<a href="{% url 'contact' %}">
+    <button>Add Query</button>
+</a>
+
+{% endblock %}

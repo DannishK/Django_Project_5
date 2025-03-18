@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+
+
+
+
+
 from hosi import views
 
 urlpatterns = [
@@ -37,4 +43,9 @@ urlpatterns = [
     path('newsletterlist/', views.Newsletterlist, name='newsletterlist'),
     path('editnewsletter/<int:id>/', views.editnewsletter, name='editnewsletter'),
     path('deletenewsletter/<int:id>/', views.deletenewsletter, name='deletenewsletter'),
+    path('register/', views.registration, name='register'),
+    path('login/', views.loginPage, name='loginPage'),
+    path('logout/', views.logoutUser, name='logout'),
+
+
 ]

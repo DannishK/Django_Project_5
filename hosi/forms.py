@@ -2,7 +2,9 @@
 from django import forms
 
 from hosi.models import Appointment, Query , Newsletter
-
+from django.contrib.auth.forms import UserCreationForm
+from django.forms import ModelForm
+from django.contrib.auth.models import User
 
 class AppointmentForm(forms.ModelForm):
     class Meta:
@@ -37,3 +39,10 @@ class NewsletterForm(forms.ModelForm):
       widgets = {
         'email': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Enter your email'}),
     }
+
+class CreateUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
+

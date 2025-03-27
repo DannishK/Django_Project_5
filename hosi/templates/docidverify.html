@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Doctor ID</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -83,74 +83,43 @@
 				<div class="d-flex justify-content-center">
 
 
-					<h3 id="form-title">LOGIN ADMIN</h3>
+					<h3 id="form-title">DOCTOR ID</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
 					<form method="POST" action="">
                         {% csrf_token %}
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" name="username" placeholder="Username..." class="form-control">
-						</div>
+<!--						<div class="input-group mb-3">-->
+<!--							<div class="input-group-append">-->
+<!--								<span class="input-group-text"><i class="fas fa-user"></i></span>-->
+<!--							</div>-->
+<!--							<input type="text" name="username" placeholder="Username..." class="form-control">-->
+<!--						</div>-->
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-								<input type="password" name="password" placeholder="Password..." class="form-control" >
+								<input type="number" name="doctor_identifier" placeholder="Your ID..." class="form-control" >
 						</div>
 
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 				<input class="btn login_btn" type="submit" value="Login">
+				 				<input class="btn login_btn" type="submit" value="Enter Registration">
+<!--								<a href="">-->
+<!--									<button></button>-->
+<!--								</a>-->
 				   			</div>
 					</form>
 
 				</div>
 
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an Admin account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
-					</div>
+<!--				<div class="mt-4">-->
+<!--					<div class="d-flex justify-content-center links">-->
+<!--						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>-->
+<!--					</div>-->
 
-				</div>
+<!--				</div>-->
 			</div>
 		</div>
 	</div>
 </body>
 
 </html>
-
-
-
-
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <title>Login</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <h2>Login Required</h2>-->
-
-<!--    {% if error %}-->
-<!--        <p style="color: red;">{{ error }}</p>-->
-<!--    {% endif %}-->
-
-<!--    <form method="post">-->
-<!--        {% csrf_token %}-->
-<!--        <label>Username:</label>-->
-<!--        <input type="text" name="username" required>-->
-<!--        <br>-->
-
-<!--        <label>Password:</label>-->
-<!--        <input type="password" name="password" required>-->
-<!--        <br>-->
-
-<!--        <button type="submit">Login</button>-->
-<!--        {% for messages in messages %}-->
-<!--          <p id="messages">{{message}}</p>-->
-<!--        {% endfor %}-->
-<!--    </form>-->
-
-<!--</body>-->
-<!--</html>-->

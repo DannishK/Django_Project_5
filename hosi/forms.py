@@ -1,7 +1,7 @@
 
 from django import forms
 
-from hosi.models import Appointment, Query , Newsletter
+from hosi.models import Appointment, Query, Newsletter, DoctorID
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from django.contrib.auth.models import User
@@ -44,5 +44,10 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+class DoctorIDForm(forms.ModelForm):
+    class Meta:
+        model = DoctorID
+        fields =['doctor_identifier']
 
 

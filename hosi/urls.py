@@ -46,6 +46,9 @@ urlpatterns = [
     path('register/', views.registration, name='register'),
     path('login/', views.loginPage, name='loginPage'),
     path('logout/', views.logoutUser, name='logout'),
+    # path('docidverify/', views.doctorIDview, name='docidverify'),
+    # path('postid/', views.Postid, name='postid'),
+    # path('doctorid/', views.AddDoctorId, name='doctorid'),
 
 
 ]

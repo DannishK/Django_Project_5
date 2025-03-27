@@ -32,3 +32,13 @@ class Newsletter(models.Model):
 
     def __str__(self):
         return self.email
+
+class DoctorID(models.Model):
+    doctor_identifier = models.IntegerField(primary_key=True)
+
+    class Meta:
+        managed = True
+
+    objects = models.Manager()
+    def __str__(self):
+        return self.doctor_identifier

@@ -1,0 +1,47 @@
+<!-- docidverify.html -->
+<form method="POST">
+    {% csrf_token %}
+
+    <!-- Display non-field errors -->
+    {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Doctor Identifier field -->
+    <div class="form-group">
+        <label for="id_doctor_identifier">Doctor ID:</label>
+        <input type="number"
+               name="doctor_identifier"
+               id="id_doctor_identifier"
+               class="form-control"
+               value="{{ form.doctor_identifier.value|default_if_none:'' }}"
+               required>
+        {% if form.doctor_identifier.errors %}
+            <div class="text-danger">
+                {% for error in form.doctor_identifier.errors %}
+                    <small>{{ error }}</small>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+<!--<form action="{% url 'docidverify' %}" method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    {{form}}-->
+<!--    <input type="number" name="doctor_identifier" placeholder="Your ID..." class="form-control" >-->
+
+
+<!--    <input type="submit" name="Create doctor_identifier">-->
+
+
+
+<!--</form>-->
